@@ -1,7 +1,7 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - function to sorts a doubly linked list of integers in ascending
+ * insertion_sort_list - function to sorts a doubly linked list
  * order using an insertion sort algorithm
  * @list: doubly linked list of integers to be sorted
  */
@@ -14,18 +14,15 @@ void insertion_sort_list(listint_t **list)
 
 	/* dance begins with 1st from house left following */
 	follow = (*list);
-	
 	lead = (*list)->next;
 	while (lead)
 	{
 		new = lead->next;
 		while (follow && lead->n < follow->n)
 		{
-			
 			if (follow->prev)
 				follow->prev->next = lead;
 			else
-				
 				*list = lead;
 			if (lead->next)
 				lead->next->prev = follow;
@@ -35,10 +32,8 @@ void insertion_sort_list(listint_t **list)
 			follow->next = temp;
 			follow->prev = lead;
 			print_list(*list);
-			
 			follow = lead->prev;
 		}
-		
 		lead = new;
 		if (lead)
 			follow = lead->prev;

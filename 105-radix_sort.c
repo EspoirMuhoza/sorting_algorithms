@@ -120,11 +120,8 @@ void radix_sort(int *array, size_t size)
 		/* fill buckets sorting by digit at current power of 10 */
 		for (i = 0; i < size; i++)
 		{
-			
 			digit = (array[i] / divisor) % 10;
-			
 			buckets[digit][bucket_count[digit]] = array[i];
-			
 			bucket_count[digit]++;
 		}
 		into_array(array, size, buckets, bucket_count);

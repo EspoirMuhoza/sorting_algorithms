@@ -1,8 +1,7 @@
 #include "sort.h"
 
 /**
- * selection_sort - Function to sorts an array of integers using a selction sort
- * algorithm
+ * selection_sort - Function to sorts an array of integers
  * @array: array of integers to be sorted
  * @size: size of array
  */
@@ -15,17 +14,14 @@ void selection_sort(int *array, size_t size)
 
 	for (i = 0; i < n - 1; i++)
 	{
-		
 		min_j = i;
 		for (j = i + 1; j < n; j++)
 		{
-		
 			if (array[j] < array[min_j])
 			{
 				min_j = j;
 			}
 		}
-		
 		if (min_j != i)
 		{
 			temp = array[i];
